@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 const PRESET_IMAGES = [
   "/images/apollo_altrust.png",
@@ -403,7 +404,7 @@ export default function ProductFormModal({ product, onClose, onSave }) {
                 {images.map((img, idx) => (
                   <div key={idx} className="image-preview-item">
                     <img 
-                      src={img} 
+                      src={getAssetUrl(img)} 
                       alt="" 
                       onError={(e) => {
                         e.target.onerror = null;

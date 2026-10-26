@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function UserHome({ products, setView, setSelectedProductId }) {
   // Filters State
@@ -106,7 +107,7 @@ export default function UserHome({ products, setView, setSelectedProductId }) {
             <div className="hero-visual">
               <div className="hero-circle"></div>
               <img 
-                src="/images/apollo_altrust.png" 
+                src={getAssetUrl('/images/apollo_altrust.png')} 
                 alt="Featured Apollo Tyre" 
                 className="hero-tyre-img" 
                 onError={(e) => {
@@ -258,7 +259,7 @@ export default function UserHome({ products, setView, setSelectedProductId }) {
                   >
                     <div className="product-card-image-wrap">
                       <img 
-                        src={product.images?.[0] || '/images/apollo_altrust.png'} 
+                        src={getAssetUrl(product.images?.[0] || '/images/apollo_altrust.png')} 
                         alt={product.title} 
                         className="product-card-image"
                         onError={(e) => {

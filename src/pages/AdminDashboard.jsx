@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function AdminDashboard({ 
   products, 
@@ -198,7 +199,7 @@ export default function AdminDashboard({
                             <div className="table-product-cell">
                               <div className="table-product-thumb">
                                 <img 
-                                  src={product.images?.[0] || '/images/apollo_altrust.png'} 
+                                  src={getAssetUrl(product.images?.[0] || '/images/apollo_altrust.png')} 
                                   alt="" 
                                   onError={(e) => {
                                     e.target.onerror = null;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function TyreDetail({ productId, products, setView }) {
   const product = products.find(p => p.id === productId);
@@ -62,7 +63,7 @@ export default function TyreDetail({ productId, products, setView }) {
         <div className="detail-gallery">
           <div className="detail-main-img-wrap">
             <img 
-              src={images[activeImgIndex] || '/images/apollo_altrust.png'} 
+              src={getAssetUrl(images[activeImgIndex] || '/images/apollo_altrust.png')} 
               alt={product.title} 
               className="detail-main-img"
               onError={(e) => {
@@ -85,7 +86,7 @@ export default function TyreDetail({ productId, products, setView }) {
                 onClick={() => setActiveImgIndex(idx)}
               >
                 <img 
-                  src={img || '/images/apollo_altrust.png'} 
+                  src={getAssetUrl(img || '/images/apollo_altrust.png')} 
                   alt={`${product.title} Thumbnail ${idx + 1}`}
                   onError={(e) => {
                     e.target.onerror = null;
